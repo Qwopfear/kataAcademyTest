@@ -17,17 +17,17 @@ public class Main {
 
     }
 
-    public static String calc(String expression) throws Exception {
+    public static String calc(String input) throws Exception {
         // For a + b format
         boolean isArabic = false;
         boolean isRome = false;
         int a = 0;
         int b = 0;
-        String [] partsOfExpression = expression.split(" ");
+        String [] partsOfExpression = input.split(" ");
         int result = 0;
 
         int operands = 0;
-        for (char c: expression.toCharArray()) {
+        for (char c: input.toCharArray()) {
             if (c > 41 && c < 48)
                 operands++;
             if (c >47 && c < 58)
@@ -46,7 +46,7 @@ public class Main {
 
         // For a+b format
         if (partsOfExpression.length < 2){
-            char [] expressionBySings = expression.toCharArray();
+            char [] expressionBySings = input.toCharArray();
             int positionInsideExpression = 0;
             partsOfExpression = new String[3];
             for (char i: expressionBySings) {
