@@ -1,18 +1,20 @@
 package Java;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 //        Calculator c = new Calculator();
-
-        try {
-            System.out.println(calc("1 + 2"));
-            System.out.println(calc("10 * 3"));
-            System.out.println(calc("19 - 2"));
-            System.out.println(calc("7 / 3"));
-            System.out.println(calc("I + II"));
-            System.out.println(calc("X * III"));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        Scanner sc = new Scanner(System.in);
+        String expression = sc.nextLine();
+        while (!expression.equals("exit")){
+            try {
+                System.out.println(calc(expression));
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }finally {
+                expression = sc.nextLine();
+            }
         }
 
     }
